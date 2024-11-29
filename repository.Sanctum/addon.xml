@@ -1,0 +1,10 @@
+<addon id="Sanctum" version="0.07" name="Sanctum" provider-name="Philosophics">
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Sanctum</summary>
+        <description>A project for The Salted Lounge</description>
+        <platform>all</platform>
+    </extension>
+</addon>
