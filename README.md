@@ -1,2 +1,2 @@
 # Sanctum
-Project of The Salted Lounge™
+A project for The Salted Lounge™
