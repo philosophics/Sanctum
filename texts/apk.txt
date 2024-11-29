@@ -1,6 +1,6 @@
-﻿name="Misfit Mods Media Centers Apks (Forks of Kodi with our Wizard installed)"
+﻿name="Sanctum Media Center Apks (Forks of Kodi with our Wizard installed)"
 section="yes"
-url="http://misfitmods.com/mmwiz/texts/mmmc.txt"
+url="https://github.com/philosophics/Sanctum/texts/mmmc.txt"
 icon="http://misfitmods.com/mmwiz/turtle/wizimages/mmmc.png"
 fanart="http://"
 adult="no"
