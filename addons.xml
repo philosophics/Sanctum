@@ -8,6 +8,10 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Sanctum Repository</summary>
+		<assests>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+		</assests>
         <description>A project for The Salted Lounge</description>
         <platform>all</platform>
     </extension>
