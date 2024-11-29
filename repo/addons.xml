@@ -1,0 +1,9 @@
+<addon id="repository.Sanctum" name="Sanctum Repo" version="0.07" provider-name="The Salted Lounge™">
+  <extension point="xbmc.addon.repository" name="Sanctum Repository">
+    <dir>
+      <info compressed="false">https://philosophics.github.io/Sanctum/repo/addons.xml</info>
+      <checksum>https://philosophics.github.io/Sanctum/repo/addonsmd5.txt</checksum>
+      <datadir zip="true">https://philosophics.github.io/Sanctum/repo/</datadir>
+    </dir>
+  </extension>
+</addon>
