@@ -1,6 +1,0 @@
-name="Closed for Renovations"
-section="no"
-url="http://"
-icon="http://"
-fanart="http://"
-description="Rom Pack"

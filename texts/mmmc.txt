@@ -1,7 +1,0 @@
-name="[COLOR red]======Sanctum Media Center======[/COLOR]"
-section="no"
-url="http://"
-icon"http://"
-fanart="http://"
-adult="no"
-description="Our Forks of Kodi with Wizard"
