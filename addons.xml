@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="repository.Sanctum" version="0.07" name="[COLOR limegreen][B]Sanctum Repository[/B][/COLOR]" provider-name="Philosophics">
+    <extension point="xbmc.addon.repository" name="Sanctum Repository">
+        <info compressed="true">https://philosophics.github.io/Sanctum/addons.xml</info>
+        <checksum>https://philosophics.github.io/Sanctum/addonsmd5.txt</checksum>
+        <datadir zip="true">https://philosophics.github.io/Sanctum/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Sanctum Repository</summary>
+        <description>A project for The Salted Lounge</description>
+        <platform>all</platform>
+        <assests>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assests>
+    </extension>
+</addon>
+</addons>
