@@ -1,0 +1,44 @@
+<addons>
+<addon id="plugin.program.SanctumWiz" name="Sanctum Wizard" version="0.07" provider-name="Philosophics">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.25.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Lightweight template for installing Sanctum builds. Includes code from Aftermath Wizard by Surfacingx, Skin Switch by OpenELEQ, and Base code by BYB. Credits to all contributors. Report any bugs to @philosophics on Discord.</summary>
+        <description lang="en_GB">Kodi Wizard</description>
+        <disclaimer lang="en_GB">This Addon contains no content.</disclaimer>
+        <language>en</language>
+        <platform>all</platform>
+		<filename>https://philosophics.github.io/Sanctum/plugin.program.SanctumWiz/plugin.program.SanctumWiz.zip</filename>
+        <license>GPL-2.0-or-later</license>
+        <news>0.07 - Initial Release</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+<addon id="repository.Sanctum" version="0.07" name="[COLOR limegreen][B]Sanctum Repository[/B][/COLOR]" provider-name="Philosophics">
+    <extension point="xbmc.addon.repository" name="Sanctum Repository">
+        <dir>
+            <info compressed="false">https://philosophics.github.io/Sanctum/addons.xml</info>
+            <checksum>https://philosophics.github.io/Sanctum/addons.xml.md5</checksum>
+            <datadir zip="true">https://philosophics.github.io/Sanctum/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Sanctum Repository</summary>
+        <description>A project for The Salted Lounge™</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+</addons>
