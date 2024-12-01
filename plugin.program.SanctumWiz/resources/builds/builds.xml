@@ -3,8 +3,8 @@
         <name>Hardnox: Sanctum</name>
         <version>0.07</version>
         <url>https://www.dropbox.com/scl/fi/bozzjp9nz9n4ijqborisl/Sanctum_v0.7.zip?rlkey=q74g7up2kgm9dka3jyar9xijk&amp;st=p62ief2m&amp;dl=1</url>
-        <icon>https://philosophics.github.io/Sanctum/icon.png</icon>
-        <fanart>https://philosophics.github.io/Sanctum/fanart.jpg</fanart>
+        <icon>https://philosophics.github.io/Sanctum/plugin.program.SanctumWiz/resources/builds/hardnox.Sanctum/icon.png</icon>
+        <fanart>https://philosophics.github.io/Sanctum/plugin.program.SanctumWiz/resources/builds/hardnox.Sanctum/fanart.jpg</fanart>
         <description>A project for The Salted Lounge</description>
     </build>
     <build>
