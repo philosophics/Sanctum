@@ -27,7 +27,7 @@
     <extension point="xbmc.addon.repository" name="Sanctum Repository">
         <info compressed="true">https://philosophics.github.io/Sanctum/addons.xml</info>
         <checksum>https://philosophics.github.io/Sanctum/addonsmd5.txt</checksum>
-        <dir zip="true">https://philosophics.github.io/Sanctum/repository.Sanctum</dir>
+        <dir zip="true">https://philosophics.github.io/Sanctum/repository.Sanctum/</dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Sanctum Repository</summary>
