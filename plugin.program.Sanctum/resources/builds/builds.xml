@@ -11,8 +11,8 @@
         <name>Sanctum Touch</name>
         <version>0.7</version>
         <url>https://www.dropbox.com/scl/fi/xlnvomy8u77npv9deav7g/sanctum-touch_v0.07.zip?rlkey=pf3mxkk1iyp71s3dhhu6clibj&amp;st=q1n67qp2&amp;dl=1</url>
-        <icon>https://philosophics.github.io/Sanctum/icon.png</icon>
-        <fanart>https://philosophics.github.io/Sanctum/fanart.jpg</fanart>
+        <icon>https://philosophics.github.io/Sanctum/plugin.program.Sanctum/resources/builds/Sanctum.Touch/icon.png</icon>
+        <fanart>https://philosophics.github.io/Sanctum/plugin.program.Sanctum/resources/builds/Sanctum.Touch/fanart.jpg</fanart>
         <description>A project for mobile devices**</description>
     </build>
 </builds>
