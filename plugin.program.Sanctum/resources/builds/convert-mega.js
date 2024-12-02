@@ -1,13 +1,13 @@
 function convertMegaLink() {
-    const megaLink = document.getElementById('megaLink').value; // Get input link
-    const output = document.getElementById('output'); // Get the output element
+    const megaLink = document.getElementById('megaLink').value;
+    const output = document.getElementById('output');
 
     if (!megaLink.includes("mega.nz")) {
         output.textContent = "Please enter a valid MEGA link.";
         return;
     }
 
-    const fileID = megaLink.match(/\/file\/(.+?)#/); // Extract file ID from the link
+    const fileID = megaLink.match(/\/file\/(.+?)#/);
     if (!fileID) {
         output.textContent = "Invalid MEGA link format.";
         return;
@@ -21,7 +21,6 @@ function convertMegaLink() {
         p: fileID[1]
     }]);
 
-    // Make the API call
     fetch(apiURL, {
         method: "POST",
         headers: { "Content-Type": "text/plain" },
@@ -29,10 +28,15 @@ function convertMegaLink() {
     })
     .then(response => response.json())
     .then(data => {
-        if (data[0]?.g) {
-            output.textContent = `Direct Link: ${data[0].g}`;
+        if (data[0]?.g && data[0]?.n) {
+            const directLink = data[0].g;
+            const fileName = data[0].n;
+
+            output.innerHTML = `
+                <p>Direct Link: <a href="${directLink}" download="${fileName}">${fileName}</a></p>
+            `;
         } else {
-            output.textContent = "Failed to convert MEGA link.";
+            output.textContent = "Failed to convert MEGA link or retrieve file metadata.";
         }
     })
     .catch(error => {
