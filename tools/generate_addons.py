@@ -17,7 +17,6 @@ def generate_addons_xml():
                 print(f"Found addon.xml: {addon_file}")
                 with open(addon_file, "r", encoding="utf-8") as f:
                     addon_content = f.read().strip()
-                    addon_content = addon_content.replace('<addon id="plugin.program.SanctumWiz"/>', '<addon id="plugin.program.SanctumWiz" />')
                     addon_content = addon_content.replace('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '').strip()
                     addons_xml += f"{addon_content}\n"
 
