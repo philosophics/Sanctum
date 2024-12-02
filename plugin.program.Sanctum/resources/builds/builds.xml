@@ -2,7 +2,7 @@
     <build>
         <name>Hardnox: Sanctum</name>
         <version>0.7</version>
-        <url>https://www.dropbox.com/scl/fi/wdj3opopmijt80yq6puaq/Sanctum_v0.7.zip?rlkey=h14a72tcb2wc0ol1r8mwyd552&amp;st=0d5copga&amp;dl=1</url>
+        <url>https://s3.us-west-1.amazonaws.com/sanctum.build/Sanctum_v0.7.zip</url>
         <icon>https://philosophics.github.io/Sanctum/plugin.program.Sanctum/resources/builds/hardnox.Sanctum/icon.png</icon>
         <fanart>https://philosophics.github.io/Sanctum/plugin.program.Sanctum/resources/builds/hardnox.Sanctum/fanart.jpg</fanart>
         <description>A project for The Salted Lounge™</description>
