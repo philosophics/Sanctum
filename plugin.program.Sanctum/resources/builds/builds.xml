@@ -1,0 +1,18 @@
+<builds>
+    <build>
+        <name>Hardnox: Sanctum</name>
+        <version>0.7</version>
+        <url>https://www.dropbox.com/scl/fi/wo6rjpq3e824j0pzfamuy/Sanctum_v0.7.zip?rlkey=izs605th7ayfwvo5lkoj9gr7x&amp;st=7lrxyoam&amp;dl=1</url>
+        <icon>https://philosophics.github.io/Sanctum/plugin.program.SanctumWiz/resources/builds/hardnox.Sanctum/icon.png</icon>
+        <fanart>https://philosophics.github.io/Sanctum/plugin.program.SanctumWiz/resources/builds/hardnox.Sanctum/fanart.jpg</fanart>
+        <description>A project for The Salted Lounge</description>
+    </build>
+    <build>
+        <name>Sanctum Touch</name>
+        <version>0.7</version>
+        <url>https://www.dropbox.com/scl/fi/xlnvomy8u77npv9deav7g/sanctum-touch_v0.07.zip?rlkey=pf3mxkk1iyp71s3dhhu6clibj&amp;st=q1n67qp2&amp;dl=1</url>
+        <icon>https://philosophics.github.io/Sanctum/icon.png</icon>
+        <fanart>https://philosophics.github.io/Sanctum/fanart.jpg</fanart>
+        <description>A project for mobile devices**</description>
+    </build>
+</builds>
