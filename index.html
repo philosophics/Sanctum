@@ -25,12 +25,15 @@
             margin-right: 10px;
         }
         footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-top: 50px;
             font-size: 12px;
             color: gray;
+            test-align: left;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
         }
         footer p {
             margin: 0;
@@ -62,8 +65,10 @@
         <li><a href="repository.Sanctum.zip">repository.Sanctum.zip/</a> - repository file</li>
     </ul>
     <footer>
-        <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.</p>
-        <p>Powered by <a href="https://www.cloudflare.com" target="_blank">Cloudflare</a>.</p>
+        <div class="footer-container">
+            <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.</p>
+            <p>Powered by <a href="https://www.cloudflare.com" target="_blank">Cloudflare</a>.</p>
+        </div>
     </footer>
 </body>
 </html>
