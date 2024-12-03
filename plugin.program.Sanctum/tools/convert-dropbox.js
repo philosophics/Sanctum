@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropbox Link Converter</title>
-    <script>
-        function convertDropboxLink() {
+function convertDropboxLink() {
             console.log("Function called");
             let link = document.getElementById('dropboxLink').value;
             console.log("Original Link:", link);
@@ -19,16 +12,3 @@
             document.getElementById('dropboxoutput').innerText = `Converted Link: ${link}`;
             console.log("Output updated");
         }
-    </script>
-</head>
-<body>
-    <h1>Dropbox Link Converter</h1>
-
-    <label for="dropboxLink">Enter Dropbox Link:</label>
-    <input type="text" id="dropboxLink" placeholder="Enter Dropbox link" size="50">
-    <button onclick="convertDropboxLink()">Convert Link</button>
-
-    <h2>Converted Link:</h2>
-    <p id="dropboxoutput"></p>
-</body>
-</html>
