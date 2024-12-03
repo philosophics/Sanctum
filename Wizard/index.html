@@ -8,6 +8,15 @@
     <script src="tools/convert-mega.js"></script>
     <script src="tools/convert-dropbox.js"></script>
     <style>
+        body {
+            margin: 0;
+            padding: 21;
+            background-color: #141414;
+            color: #bfbfbf;
+        }
+        a {
+            color: #4e9af1;
+        }
         .button-container {
             display: flex;
             gap: 20px;
@@ -52,8 +61,11 @@
     <input type="text" id="megaLink" placeholder="Paste link here">
     <button onclick="convertMegaLink()">Convert</button>
     <p id="megaoutput"></p>
-<footer>
-    <p>More tools to come...</p>
-</footer>
+    <footer>
+        <div class="footer-container">
+            <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.</p>
+            <p>Powered by <a href="https://www.cloudflare.com" target="_blank">Cloudflare</a>.</p>
+        </div>
+    </footer>
 </body>
 </html>
