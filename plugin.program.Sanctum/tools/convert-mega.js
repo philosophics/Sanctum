@@ -1,6 +1,6 @@
 function convertMegaLink() {
     const megaLink = document.getElementById('megaLink').value;
-    const output = document.getElementById('output');
+    const output = document.getElementById('megaOutput');
 
     if (!megaLink.includes("mega.nz")) {
         output.textContent = "Please enter a valid MEGA link.";
