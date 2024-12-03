@@ -17,7 +17,7 @@
             link = link.replace(/dl=0/, 'dl=1');
 
             // Display the converted link in the result field
-            document.getElementById('result').value = link;
+            document.getElementById('dropboxOutput').innerText = `Converted Link: ${convertedLink}`;
         }
     </script>
 </head>
