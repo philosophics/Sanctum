@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanctum Wizard</title>
-    <script src="resources/builds/convert-mega.js"></script>
+    <script src="tools/convert-mega.js"></script>
+    <script src="tools/convert-dropbox.js"></script>
 </head>
     <h1>Sanctum Wizard</h1>
     <p></p>
@@ -11,12 +12,19 @@
     <ul>
         <li><a href="addon.xml">addon.xml</a></li>
         <li><a href="resources/builds/builds.xml">builds.xml</a></li>
-        <li><a href="resources/builds/convert-mega.js">convert-mega.js</a></li>
+        <li><a href="tools/convert-dropbox.js">convert-dropbox.js</a></li>
+        <li><a href="tools/convert-mega.js">convert-mega.js</a></li>
         <li><a href="resources/fanart.jpg">fanart.jpg</a></li>
         <li><a href="resources/icon.png">icon.png</a></li>
         <li><a href="resources/notify.txt">notify.txt</a></li>
         <li><a href="plugin.program.Sanctum-0.07.zip">plugin.program.Sanctum-0.07.zip</a></li>
     </ul>
+    <hr>
+    <h2>Convert DropBox Link</h2>
+    <label for="dropboxLink">Link:</label>
+    <input type="text" id="dropboxLink" placeholder="Paste link here">
+    <button onclick="convertdropboxLink()">Convert</button>
+    <p id="output"></p>
     <hr>
     <h2>Convert MEGA Link</h2>
     <label for="megaLink">Link:</label>
