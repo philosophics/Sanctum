@@ -36,8 +36,8 @@
         <description>A project for The Salted Lounge™</description>
         <platform>all</platform>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>../images/icon.png</icon>
+            <fanart>../images/fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
