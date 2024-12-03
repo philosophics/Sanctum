@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanctum</title>
-    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <img src="/images/logo.png" alt="Sanctum Logo" style="width: auto; height: auto; display: block; margin-left: 0;">
@@ -19,8 +19,13 @@
         <li><a href="/images/icon.png">icon.png</a> - logo</li>
         <li><a href="repository.Sanctum.zip">repository.Sanctum.zip/</a> - repository file</li>
     </ul>
-    <button onclick="window.location.href='/Wizard';" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">
-        Go to Wizard
-    </button>
+    <div class="button-container">
+        <button onclick="window.location.href='/Wizard';" class="wizard-button">
+            Go to Wizard
+        </button>
+        <button onclick="window.location.href='https://discord.com/saltedlounge';" class="discord-button">
+            Join Discord
+        </button>
+    </div>
 </body>
 </html>
