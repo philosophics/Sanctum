@@ -1,0 +1,24 @@
+<addon id="plugin.program.Sanctum" name="Sanctum Wizard" version="0.07" provider-name="Philosophics">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Lightweight template for installing Sanctum builds. Includes code from Aftermath Wizard by Surfacingx, Skin Switch by OpenELEQ, and Base code by BYB. Credits to all contributors. Report any bugs to @philosophics on Discord.</summary>
+        <description lang="en_GB">Kodi Wizard</description>
+        <disclaimer lang="en_GB">This Addon contains no content.</disclaimer>
+        <language>en</language>
+        <platform>all</platform>
+		<filename>https://sanctum.foo/Wizard/plugin.program.Sanctum/plugin.program.Sanctum.zip</filename>
+        <license>GPL-2.0-or-later</license>
+        <news>0.07 - Initial Release</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
