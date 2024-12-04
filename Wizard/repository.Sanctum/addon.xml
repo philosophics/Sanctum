@@ -9,6 +9,7 @@
     <extension point="xbmc.addon.metadata">
         <summary>addon source</summary>
         <description>A project for The Salted Lounge™</description>
+		<kodi minversion="19.0.0"/>
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
