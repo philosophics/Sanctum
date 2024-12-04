@@ -9,8 +9,8 @@
     </extension>
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">Lightweight template for installing Sanctum builds. Includes code from Aftermath Wizard by Surfacingx, Skin Switch by OpenELEQ, and Base code by BYB. Credits to all contributors. Report any bugs to @philosophics on Discord.</summary>
-        <description lang="en_GB">Update Wizard for Kodi</description>
+        <summary lang="en_GB">Update and Maintenance Tool</summary>
+        <description lang="en_GB">Lightweight template for installing Sanctum builds. Includes code from Aftermath Wizard by Surfacingx, Skin Switch by OpenELEQ, and Base code by BYB. Credits to all contributors. Report any bugs to @philosophics on Discord.</description>
         <disclaimer lang="en_GB">This Addon contains no content</disclaimer>
         <language>en</language>
         <platform>all</platform>
@@ -32,7 +32,7 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Sanctum Repository</summary>
+        <summary>addon source</summary>
         <description>A project for The Salted Lounge™</description>
         <platform>all</platform>
         <assets>
