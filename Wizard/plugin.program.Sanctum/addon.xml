@@ -17,8 +17,8 @@
         <license>GPL-2.0-or-later</license>
         <news>0.07 - Initial Release</news>
         <assets>
-            <icon>../resources/icon.png</icon>
-            <fanart>../resources/fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
