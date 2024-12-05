@@ -14,13 +14,15 @@
         <disclaimer lang="en_GB">This Addon contains no content</disclaimer>
         <language>en</language>
         <platform>all</platform>
-	<kodi minversion="19.0.0"/>
-		<filename>https://sanctum.foo/Wizard/plugin.program.Sanctum/plugin.program.Sanctum-0.07.zip</filename>
+		<filename>https://s3.us-west-1.amazonaws.com/sanctum.build/plugin.program.Sanctum-0.07.zip</filename>
         <license>GPL-2.0-or-later</license>
         <news>0.07 - Initial Release</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+			<screenshot>resources/wizard-banner_1.png</screenshot>
+			<screenshot>resources/wizard-banner_2.png</screenshot>
+			<screenshot>resources/wizard-banner_3.png</screenshot>
         </assets>
     </extension>
 </addon>
@@ -31,11 +33,15 @@
             <checksum>https://sanctum.foo/lib/addons.xml.md5</checksum>
             <datadir zip="true">https://sanctum.foo/Wizard</datadir>
         </dir>
+		<dir>
+			<info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+		</dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>addon source</summary>
         <description>A project for The Salted Lounge™</description>
-	<kodi minversion="19.0.0"/>
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
