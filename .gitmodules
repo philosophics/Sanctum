@@ -1,0 +1,3 @@
+[submodule "Wizard/script.skin.helper.service"]
+	path = Wizard/script.skin.helper.service
+	url = https://github.com/kodi-community-addons/script.skin.helper.service.git
