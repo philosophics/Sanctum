@@ -20,9 +20,9 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-			<screenshot>resources/wizard-banner_1.png</screenshot>
-			<screenshot>resources/wizard-banner_2.png</screenshot>
-			<screenshot>resources/wizard-banner_3.png</screenshot>
+			<screenshot>resources/wizard-banner_1.jpg</screenshot>
+			<screenshot>resources/wizard-banner_2.jpg</screenshot>
+			<screenshot>resources/wizard-banner_3.jpg</screenshot>
         </assets>
     </extension>
 </addon>
@@ -46,9 +46,9 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-			<screenshot>resources/repository-banner_1</screenshot>
-			<screenshot>resources/repository-banner_2</screenshot>
-			<screenshot>resources/repository-banner_3</screenshot>
+			<screenshot>resources/repository-banner_1.png</screenshot>
+			<screenshot>resources/repository-banner_2.png</screenshot>
+			<screenshot>resources/repository-banner_3.png</screenshot>
         </assets>
     </extension>
 </addon>

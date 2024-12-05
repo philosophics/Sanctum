@@ -19,9 +19,9 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-			<screenshot>resources/wizard-banner_1.png</screenshot>
-			<screenshot>resources/wizard-banner_2.png</screenshot>
-			<screenshot>resources/wizard-banner_3.png</screenshot>
+			<screenshot>resources/wizard-banner_1.jpg</screenshot>
+			<screenshot>resources/wizard-banner_2.jpg</screenshot>
+			<screenshot>resources/wizard-banner_3.jpg</screenshot>
         </assets>
     </extension>
 </addon>
