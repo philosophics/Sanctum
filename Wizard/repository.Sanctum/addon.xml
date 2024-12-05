@@ -5,6 +5,11 @@
             <checksum>https://sanctum.foo/lib/addons.xml.md5</checksum>
             <datadir zip="true">https://sanctum.foo/Wizard</datadir>
         </dir>
+		<dir>
+			<info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+		</dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>addon source</summary>
