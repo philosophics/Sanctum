@@ -1,9 +1,0 @@
-[submodule "Wizard/script.skin.helper.service"]
-	path = Wizard/script.skin.helper.service
-	url = https://github.com/kodi-community-addons/script.skin.helper.service.git
-[submodule "Wizard/script.module.metadatautils"]
-	path = Wizard/script.module.metadatautils
-	url = https://github.com/kodi-community-addons/script.module.metadatautils.git
-[submodule "Wizard/script.module.thetvdb"]
-	path = Wizard/script.module.thetvdb
-	url = https://github.com/kodi-community-addons/script.module.thetvdb.git
