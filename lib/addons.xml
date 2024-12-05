@@ -46,6 +46,9 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+			<screenshot>resources/repository-banner_1</screenshot>
+			<screenshot>resources/repository-banner_2</screenshot>
+			<screenshot>resources/repository-banner_3</screenshot>
         </assets>
     </extension>
 </addon>
