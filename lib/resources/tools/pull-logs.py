@@ -1,105 +1,143 @@
 import os
 import subprocess
-import platform
 import ipaddress
-import shutil  # For copying files from Windows file system
+import socket
+import time
+import shutil
+from concurrent.futures import ThreadPoolExecutor
 
-def list_adb_devices():
-    """Lists all devices connected via ADB."""
+# Constants
+LOGS_DIR = "D:/_DEPLOYMENT/"
+PING_TIMEOUT = 500  # in ms
+MAX_THREADS = 20  # Number of threads for parallel execution
+
+# Ensure the logs directory exists
+os.makedirs(LOGS_DIR, exist_ok=True)
+
+# Function to pull local log
+def pull_local_log():
+    local_log_path = "C:/Users/philo/AppData/Roaming/Kodi/kodi.log"
+    destination = os.path.join(LOGS_DIR, "local-kodi.log")
     try:
-        result = subprocess.run(["adb", "devices"], capture_output=True, text=True, check=True)
-        devices = result.stdout.splitlines()[1:]  # Skip the first line ('List of devices attached')
-        return [line.split()[0] for line in devices if "device" in line]
-    except subprocess.CalledProcessError as e:
-        print("Error running ADB:", e)
+        shutil.copy(local_log_path, destination)
+        print(f"Local log copied to {destination}")
+    except Exception as e:
+        print(f"Failed to copy local log: {e}")
+
+# Function to ping a device
+def ping_device(ip):
+    try:
+        result = subprocess.run(["ping", "-n", "1", "-w", str(PING_TIMEOUT), str(ip)],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return ip if result.returncode == 0 else None
+    except subprocess.SubprocessError:
+        return None
+
+# Function to check if ADB port (5555) is open
+def is_adb_port_open(ip):
+    try:
+        with socket.create_connection((str(ip), 5555), timeout=1):
+            return ip
+    except socket.error:
+        return None
+
+# Discover reachable devices
+def discover_android_devices():
+    print("Discovering reachable devices...")
+    # Find local subnet
+    local_ip_output = subprocess.check_output("ipconfig", encoding="utf-8")
+    subnet = None
+    for line in local_ip_output.splitlines():
+        if "IPv4" in line:
+            subnet = line.split(":")[1].strip()
+            break
+    if not subnet:
+        print("Could not determine local subnet.")
         return []
 
-def connect_network_devices():
-    """Scans both 192.168.1.x and 10.0.0.x IP ranges and attempts to connect to ADB devices."""
-    found_devices = []
-    # Define the IP ranges to scan
-    ranges = [
-        ipaddress.IPv4Network('192.168.1.0/255', strict=False),  # 192.168.1.1 - 192.168.1.255
-        ipaddress.IPv4Network('10.0.0.0/255', strict=False),    # 10.0.0.1 - 10.0.0.255
-    ]
+    network = ipaddress.IPv4Network(f"{subnet}/24", strict=False)
+    all_hosts = list(network.hosts())
 
-    # Function to attempt connection to a given IP
-    def try_connect(ip):
-        try:
-            result = subprocess.run(['adb', 'connect', f'{ip}:5555'], capture_output=True, text=True, timeout=2)
-            if "connected" in result.stdout.lower() or "already connected" in result.stdout.lower():
-                found_devices.append(ip)
-                print(f"Connected to {ip}")
-            else:
-                print(f"Failed to connect to {ip}: {result.stderr}")
-        except subprocess.TimeoutExpired:
-            pass  # Skip on timeout
+    # Parallel ping devices
+    print("Pinging devices in parallel...")
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        reachable_devices = list(filter(None, executor.map(ping_device, all_hosts)))
 
-    # Scan both IP ranges
-    for ip_range in ranges:
-        for ip in ip_range.hosts():  # Iterate over each host in the range
-            print(f"Attempting to connect to {ip}...")
-            try_connect(str(ip))
+    print(f"Reachable devices: {reachable_devices}")
 
-    return found_devices
+    # Check for ADB port open
+    print("Checking ADB port in parallel...")
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        android_devices = list(filter(None, executor.map(is_adb_port_open, reachable_devices)))
 
-def get_product_name(device):
-    """Fetches the product name from the build.prop file."""
+    print(f"Android devices with ADB port open: {android_devices}")
+    return android_devices
+
+# Restart ADB server
+def restart_adb():
     try:
-        result = subprocess.run(["adb", "-s", device, "shell", "getprop", "ro.product.model"], capture_output=True, text=True, check=True)
-        return result.stdout.strip()  # Remove any extra whitespace/newlines
+        print("Restarting ADB server...")
+        subprocess.run(["adb", "kill-server"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["adb", "start-server"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        time.sleep(2)
+        print("ADB server restarted.")
+    except subprocess.SubprocessError as e:
+        print(f"Error restarting ADB: {e}")
+
+# Connect to a device via ADB
+def connect_device(ip):
+    adb_ip = f"{ip}:5555"
+    print(f"Attempting to connect to {adb_ip}...")
+    try:
+        result = subprocess.run(["adb", "connect", adb_ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if "connected" in result.stdout.lower():
+            print(f"Successfully connected to {adb_ip}")
+            return True
+        else:
+            print(f"Failed to connect to {adb_ip}: {result.stdout}")
+            return False
+    except subprocess.SubprocessError as e:
+        print(f"Error connecting to {adb_ip}: {e}")
+        return False
+
+# Get device name from build.prop
+def get_device_name(ip):
+    try:
+        result = subprocess.run(["adb", "-s", f"{ip}:5555", "shell", "getprop", "ro.product.model"],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        return result.stdout.strip() or "unknown-device"
+    except subprocess.SubprocessError:
+        return "unknown-device"
+
+# Pull log from remote device
+def pull_log_from_device(ip):
+    device_name = get_device_name(ip)
+    destination = os.path.join(LOGS_DIR, f"{device_name}-kodi.log")
+    try:
+        subprocess.run(["adb", "-s", f"{ip}:5555", "pull",
+                        "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log", destination],
+                       stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        print(f"Log successfully pulled from {ip} to {destination}")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to get product name from {device}: {e}")
-        return device  # Fallback to device ID if product name is not found
+        print(f"Failed to pull log from {ip}: {e}")
 
-def pull_logs_from_devices(devices):
-    """Pulls the Kodi log from all listed ADB devices."""
-    for device in devices:
-        print(f"Pulling log from device: {device}")
-        
-        # Get the product name from the device
-        product_name = get_product_name(device)
-        
-        # Define the remote log path and local log path with product name
-        remote_log_path = "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log"
-        local_log_path = f"remote-{product_name}-kodi.log"
-        
-        try:
-            # Pull the remote log file from the device
-            subprocess.run(["adb", "-s", device, "pull", remote_log_path, local_log_path], check=True)
-            print(f"Log pulled from {device} (Product: {product_name})")
-        except subprocess.CalledProcessError as e:
-            print(f"Failed to pull log from {device}: {e}")
-        
-        # Now pull the local log file from the Windows file system (instead of using ADB)
-        if platform.system() == 'Windows':
-            local_kodi_log_path = "C:/Users/philo/AppData/Roaming/Kodi/kodi.log"
-            if os.path.exists(local_kodi_log_path):
-                try:
-                    shutil.copy(local_kodi_log_path, "kodi.log")  # Copy it to current working directory
-                    print(f"Local log copied from {local_kodi_log_path} to kodi.log")
-                except Exception as e:
-                    print(f"Failed to copy local log: {e}")
-            else:
-                print(f"Local Kodi log not found at {local_kodi_log_path}")
-
+# Main function
 def main():
-    print("Scanning for ADB devices...")
+    print("Starting log retrieval process...")
+    pull_local_log()  # Pull local log first
 
-    # List local devices connected via USB
-    devices = list_adb_devices()
+    restart_adb()  # Restart ADB server once
 
-    # If no devices found via USB, attempt to discover network devices
-    if not devices:
-        print("No devices found via ADB. Attempting to discover network devices...")
-        devices = connect_network_devices()
+    android_devices = discover_android_devices()  # Discover devices
+    if not android_devices:
+        print("No Android devices found.")
+        return
 
-    # Proceed to pull logs from all found devices
-    if devices:
-        print(f"Found devices: {devices}")
-        pull_logs_from_devices(devices)
-    else:
-        print("No devices found on the network.")
+    for device in android_devices:
+        if connect_device(device):
+            pull_log_from_device(device)
+        else:
+            print(f"Skipping log pull for {device} due to connection failure.")
 
 if __name__ == "__main__":
     main()
