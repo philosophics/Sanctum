@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Define source and destination paths
 source_dir = "C:/Users/philo/AppData/Roaming/Kodi"
-destination_dir = "D:/_DEPLOYMENT/Builds"
+destination_dir = "D:/_DEPLOYMENT/Pack"
 directories_to_copy = ["addons", "media", "userdata"]
 
 # Function to get the modification time of a file
