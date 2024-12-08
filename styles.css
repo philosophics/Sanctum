@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
 }
 #site-logo {
@@ -161,11 +163,11 @@ footer {
     margin-top: 50px;
     font-size: 12px;
     color: gray;
-    text-align: left;
+    text-align: justify;
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 10px 2rem;
 }
 .footer-container {
     display: flex;
