@@ -48,8 +48,6 @@ a {
 .hidden {
     display: none;
 }
-
-/* From Uiverse.io by jeremyssocial */ 
 @keyframes blinkCursor {
     50% {
       border-right-color: transparent;
@@ -71,7 +69,7 @@ a {
     }
   }
   
-.terminal-loader {
+  .terminal-loader {
     border: 0.1em solid #333;
     background-color: #1a1a1a;
     color: #0f0;
@@ -79,15 +77,21 @@ a {
     font-size: 1em;
     padding: 1.5em 1em;
     width: 12em;
-    margin: 100px auto;
+    height: 6em;
+    margin: 100px 0;
+    margin-left: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-}
+    text-align: left;
+    display: flex;    
+    align-items: center;
+    text-align: center; 
+  }
   
-.terminal-header {
+  .terminal-header {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,48 +102,49 @@ a {
     border-top-right-radius: 4px;
     padding: 0 0.4em;
     box-sizing: border-box;
-}
+  }
   
-.terminal-controls {
+  .terminal-controls {
     float: right;
-}
+  }
   
-.control {
+  .control {
     display: inline-block;
     width: 0.6em;
     height: 0.6em;
     margin-left: 0.4em;
     border-radius: 50%;
     background-color: #777;
-}
+  }
   
-.control.close {
+  .control.close {
     background-color: #e33;
-}
+  }
   
-.control.minimize {
+  .control.minimize {
     background-color: #ee0;
-}
+  }
   
-.control.maximize {
+  .control.maximize {
     background-color: #0b0;
-}
+  }
   
-.terminal-title {
+  .terminal-title {
     float: left;
     line-height: 1.5em;
     color: #eee;
-}
+  }
   
-.text {
+  .text {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.2em solid green; /* Cursor */
     animation: typeAndDelete 4s steps(11) infinite,
       blinkCursor 0.5s step-end infinite alternate;
-    margin-top: 1.5em;
-}  
+    margin-top: 2.emem;
+    text-align: left;
+  }    
 
 .file-content {
     color: white;
