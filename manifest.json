@@ -1,7 +1,7 @@
 {
     "name": "Sanctum",
     "short_name": "Sanctum",
-    "description": "Status Site for The Salted Lounge™",
+    "description": "Info Site for The Salted Lounge™",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",

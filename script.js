@@ -1,23 +1,29 @@
 function fetchMD5(event) {
-    event.preventDefault();
+    event.preventDefault();  // Prevent default link behavior
+
     const md5Content = document.getElementById('md5-content');
-    md5Content.style.display = 'block';
+    
+    // Reset content and show loading message
+    md5Content.classList.remove('hidden');
+    md5Content.classList.add('file-content');
     md5Content.textContent = 'Loading...';
 
-    fetch('/lib/addons.xml.md5')
+    // Fetch the MD5 file
+    fetch('./lib/addons.xml.md5')
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            return response.text();
+            return response.text();  // Return the file content as text
         })
         .then(data => {
-            md5Content.textContent = data;
+            md5Content.textContent = data;  // Display the file content
         })
         .catch(error => {
-            md5Content.textContent = `Error loading file: ${error}`;
+            md5Content.textContent = `Error loading file: ${error}`;  // Show error
         });
 }
+
 function loadRandomLogo() {
     const logosDir = "lib/resources/images/logos/";
     const logoFiles = ["logo1.png", "logo2.png", "logo3.png", "logo4.png", "logo5.png"];

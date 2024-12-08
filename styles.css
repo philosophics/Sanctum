@@ -1,15 +1,16 @@
-/* Logo Breathing Animation */
+* {
+    font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
+}
 #site-logo {
     width: 80%;
-    max-width: 1420px;  /* Original max size */
-    height: auto;       /* Maintain aspect ratio */
+    max-width: 1420px;
+    height: auto;
     display: block;
     margin: 0 auto;
-    animation: breathing 5s ease-in-out infinite; /* Ensure breathing animation is active */
+    animation: breathing 5s ease-in-out infinite;
     transform-origin: center;
 }
 
-/* Breathing Animation Keyframes */
 @keyframes breathing {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -39,6 +40,105 @@ body {
 }
 a {
     color: #4e9af1;
+}
+
+.hidden {
+    display: none;
+}
+
+.file-content {
+    color: white;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    padding: 0.5rem;
+    background: #222;
+    border: 1px solid #555;
+    border-radius: 0.4rem;
+}
+
+.dropdown-btn {
+    background: #333;
+    color: white;
+    padding: 0.4rem 1rem;
+    border: 1px solid #555;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.dropdown-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.dropdown-btn:hover {
+    transform: scale(1.05);
+    background: #444;
+}
+
+.dropdown-menu {
+    background: #222;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    max-width: 100%;
+    width: fit-content;
+    max-height: 300px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    padding: 0.75rem;
+}
+
+.group:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+    background: #444;
+    color: #FFA000;
+}
+
+.file-content {
+    color: #333;
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+}
+
+ul li a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #FFA000;  
 }
 .button-container {
     display: flex;
