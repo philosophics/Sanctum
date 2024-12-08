@@ -1,11 +1,12 @@
 /* Logo Breathing Animation */
 #site-logo {
-    width: 100%;
-    max-width: 1440px;  /* Original max size */
+    width: 80%;
+    max-width: 1420px;  /* Original max size */
     height: auto;       /* Maintain aspect ratio */
     display: block;
     margin: 0 auto;
     animation: breathing 5s ease-in-out infinite; /* Ensure breathing animation is active */
+    transform-origin: center;
 }
 
 /* Breathing Animation Keyframes */
@@ -25,7 +26,7 @@
 @media screen and (max-width: 480px) {
     #site-logo {
         width: 95%;          /* More flexibility on very small devices */
-        max-width: 600px;    /* Ensure no overflow */
+        max-width: 400px;    /* Ensure no overflow */
     }
 }
 
