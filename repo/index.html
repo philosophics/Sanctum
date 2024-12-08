@@ -52,7 +52,7 @@
             color: #007BFF;
             text-decoration: none;
         }
-        button {
+        .animated-button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,19 +133,20 @@
     <input type="text" id="dropboxLink" placeholder="Paste link here">
     <button onclick="convertDropboxLink()">Convert</button>
     <p id="dropboxoutput"></p>
-    <hr>
+    <hr>     
+    <h3>Convert MEGA Link</h3>
+    <label for="megaLink">Link:</label>
+    <input type="text" id="megaLink" placeholder="Paste link here">
+    <button onclick="convertMegaLink()">Convert</button>
+    <p id="megaoutput"></p>
+    <h4></h4>
     <button>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
         </svg>
         <span class="play">Play</span>
         <span class="now">Now</span>
-    </button>      
-    <h3>Convert MEGA Link</h3>
-    <label for="megaLink">Link:</label>
-    <input type="text" id="megaLink" placeholder="Paste link here">
-    <button onclick="convertMegaLink()">Convert</button>
-    <p id="megaoutput"></p>
+    </button> 
     <footer>
         <div class="footer-container">
             <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.</p>
