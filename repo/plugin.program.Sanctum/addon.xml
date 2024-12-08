@@ -6,7 +6,7 @@
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>executable</provides>
     </extension>
-    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Update and Maintenance Tool</summary>
         <description lang="en_GB">Lightweight template for installing Sanctum builds. Includes code from Aftermath Wizard by Surfacingx, Skin Switch by OpenELEQ, and Base code by BYB. Credits to all contributors. Report any bugs to @philosophics on Discord.</description>
