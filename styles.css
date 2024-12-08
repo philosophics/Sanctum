@@ -1,28 +1,31 @@
-@keyframes breathe {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-#breathing-logo {
-    animation: breathe 3s ease-in-out infinite;
-    width: 150px; /* Adjust size as needed */
+/* Logo Breathing Animation */
+#site-logo {
+    width: 100%;
+    max-width: 1420px;  /* Original max size */
+    height: auto;       /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto; /* Center the logo */
+    margin: 0 auto;
+    animation: breathing 4s ease-in-out infinite; /* Ensure breathing animation is active */
+}
+
+/* Breathing Animation Keyframes */
+@keyframes breathing {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes breathing {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 body {
     margin: 0;
     padding: 21;
     background-color: #141414;
     color: #bfbfbf;
+    overflow-x: hidden;
 }
 a {
     color: #4e9af1;

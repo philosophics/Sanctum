@@ -1,8 +1,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#000000">
+    <meta name="author" content="Prhilosophics, The Salted Lounge™">
+    <meta name="description" content="Sanctum - A Kodi Project for The Salted Lounge™">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="lib/resources/images/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
     <link rel="shortcut icon" href="lib/resources/images/favicon.ico" type="image/x-icon">
@@ -10,7 +13,7 @@
     <title>Sanctum</title>
 </head>
 <body>
-    <img src="lib/resources/images/logo.png" alt="Sanctum Logo" style="width: auto; height: auto; display: block; margin-left: 0;" id="breathing-logo" />
+    <img id="site-logo" alt="Sanctum Logo">
     <div class="button-container">
         <button onclick="window.location.href='https://discord.gg/saltedlounge';" class="discord-button">
             <i class="fab fa-discord"></i> Join The Salted Lounge™
@@ -22,43 +25,22 @@
     <h1>Status: Online</h1>
     <p></p>
     <ul>
-        <li><a href="README.md">README.md</a> - Project overview</li>
-        <li><a href="/lib/addons.xml">addons.xml</a> - manifest file</li>
+        <li><a href="README.md">README.md</a></li>
+        <li><a href="/lib/addons.xml">addons.xml</a></li>
         <li>
-            <a href="#" onclick="fetchMD5(event)">addons.xml.md5</a> - manifest checksum file
+            <a href="#" onclick="fetchMD5(event)">addons.xml.md5</a>
             <div id="md5-content" class="file-content" style="display: none;">Loading...</div>
         </li>
-        <li><a href="lib/resources/images/fanart.jpg">fanart.jpg</a> - wallpaper</li>
-        <li><a href="lib/resources/images/icon.png">icon.png</a> - logo</li>
-        <li><a href="repository.Sanctum.zip">repository.Sanctum.zip/</a> - repository file</li>
+        <li><a href="lib/resources/images/fanart.jpg">fanart.jpg</a></li>
+        <li><a href="lib/resources/images/icon.png">icon.png</a></li>
+        <li><a href="repository.Sanctum.zip">repository.Sanctum.zip/</a></li>
     </ul>
     <footer>
         <div class="footer-container">
-            <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.</p>
+            <p>Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPLv3</a>.</p>
             <p>Powered by <a href="https://www.cloudflare.com" target="_blank">Cloudflare</a>.</p>
         </div>
     </footer>
-    <script>
-        function fetchMD5(event) {
-            event.preventDefault();
-            const md5Content = document.getElementById('md5-content');
-            md5Content.style.display = 'block';
-            md5Content.textContent = 'Loading...';
-
-            fetch('/lib/addons.xml.md5')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    md5Content.textContent = data;
-                })
-                .catch(error => {
-                    md5Content.textContent = `Error loading file: ${error}`;
-                });
-        }
-    </script>
+<script src="script.js" defer></script>
 </body>
 </html>
