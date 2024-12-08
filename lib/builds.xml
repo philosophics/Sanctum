@@ -1,0 +1,24 @@
+<builds>
+    <build>
+        <name>Hardnox (Default)</name>
+        <version>0.7</version>
+        <url>https://builds.sanctum.foo/hardnox/hardnox_v0.7.zip</url>
+        <icon>https://builds.sanctum.foo/hardnox/icon.png</icon>
+        <fanart>https://builds.sanctum.foo/hardnox/fanart.jpg</fanart>
+        <description>A project for The Salted Lounge™</description>
+        <changelog>
+            -v0.7 - Initial release
+        </changelog>
+    </build>
+    <build>
+        <name>Sanctum Touch</name>
+        <version>0.7</version>
+        <url>https://builds.sanctum.foo/Sanctum-Touch/Sanctum_v0.7.zip</url>
+        <icon>https://builds.sanctum.foo/Sanctum-Touch/icon.png</icon>
+        <fanart>https://builds.sanctum.foo/Sanctum-Touch/fanart.jpg</fanart>
+        <description>A project for mobile devices</description>
+        <changelog>
+            -v0.7 - Initial release
+        </changelog>
+    </build>
+</builds>

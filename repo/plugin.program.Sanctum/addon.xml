@@ -13,7 +13,7 @@
         <disclaimer lang="en_GB">This Addon contains no content</disclaimer>
         <language>en</language>
         <platform>all</platform>
-		<filename>https://sanctum.foo/builds/plugin.program.Sanctum-0.07.zip</filename>
+		<filename>https://builds.sanctum.foo/plugin.program.Sanctum-0.07.zip</filename>
         <license>GPL-2.0-or-later</license>
         <news>0.07 - Initial Release</news>
         <assets>
