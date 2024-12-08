@@ -1,11 +1,11 @@
 /* Logo Breathing Animation */
 #site-logo {
     width: 100%;
-    max-width: 1420px;  /* Original max size */
+    max-width: 1440px;  /* Original max size */
     height: auto;       /* Maintain aspect ratio */
     display: block;
     margin: 0 auto;
-    animation: breathing 4s ease-in-out infinite; /* Ensure breathing animation is active */
+    animation: breathing 5s ease-in-out infinite; /* Ensure breathing animation is active */
 }
 
 /* Breathing Animation Keyframes */
@@ -15,11 +15,20 @@
     100% { transform: scale(1); }
 }
 
-@keyframes breathing {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+@media screen and (max-width: 768px) {
+    #site-logo {
+        width: 90%;          /* Adjust width for smaller screens */
+        max-width: 600px;    /* Limit max width on mobile */
+    }
 }
+
+@media screen and (max-width: 480px) {
+    #site-logo {
+        width: 95%;          /* More flexibility on very small devices */
+        max-width: 600px;    /* Ensure no overflow */
+    }
+}
+
 body {
     margin: 0;
     padding: 21;
