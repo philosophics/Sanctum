@@ -279,15 +279,3 @@ footer a {
     color: #007BFF;
     text-decoration: none;
 }
-/* Hide the link from view while keeping it accessible to kodi */
-.hidden-link {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);  /* Older browsers compatibility */
-    white-space: nowrap;             /* Prevent line breaks */
-    border: 0;
-    padding: 0;
-    margin: -1px;                    /* Fully removes it visually */
-}
