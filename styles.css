@@ -78,8 +78,8 @@ a {
     padding: 1.5em 1em;
     width: 12em;
     height: 6em;
-    margin: 100px 0;
-    margin-left: 0;
+    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
@@ -243,7 +243,7 @@ ul li a:hover {
 .button-container {
     display: flex;
     gap: 1rem;
-    margin-top: 20px;
+    margin-bottom: 1.5rem;
 }
 .button-container button {
     padding: 10px 20px;
