@@ -59,9 +59,9 @@ a {
     10% {
       width: 0;
     }
-    45%,
-    55% {
-      width: 6.2em;
+    49%,
+    77% {
+      width: 8em;
     } /* adjust width based on content */
     90%,
     100% {
@@ -70,14 +70,16 @@ a {
   }
   
   .terminal-loader {
+    margin: 1.5rem 0;
+    padding: 2em 1.5em;
     border: 0.1em solid #333;
     background-color: #1a1a1a;
     color: #0f0;
     font-family: "Courier New", Courier, monospace;
     font-size: 1em;
     padding: 1.5em 1em;
-    width: 12em;
-    height: 6em;
+    width: 14em;
+    height: 4.9em;
     margin: 1.5rem 0;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -102,9 +104,11 @@ a {
     border-top-right-radius: 4px;
     padding: 0 0.4em;
     box-sizing: border-box;
+    justify-content: flex-start;
   }
   
   .terminal-controls {
+    display: none;
     float: right;
   }
   
@@ -140,8 +144,8 @@ a {
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.2em solid green; /* Cursor */
-    animation: typeAndDelete 4s steps(11) infinite,
-      blinkCursor 0.5s step-end infinite alternate;
+    animation: typeAndDelete 6s steps(14) infinite,
+      blinkCursor 0.6s step-end infinite alternate;
     margin-top: 2.emem;
     text-align: left;
   }    
