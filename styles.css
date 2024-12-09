@@ -161,7 +161,7 @@ a {
 }
 
 .terminal-loader {
-  margin: 1.5rem 0;
+  margin: 2rem auto;
   padding: 1em 1.5em;
   border: 0.1em solid #333;
   background-color: #1a1a1a;
@@ -268,6 +268,7 @@ a {
   gap: 0.4rem;
   font-size: 0.9rem;
   transition: transform 0.2s ease-in-out;
+  position: relative;
 }
 
 .dropdown-btn svg {
@@ -287,7 +288,7 @@ a {
   border-radius: 0.5rem;
   margin-top: 0.5rem;
   min-width: 200px;
-  max-width: 90%;
+  max-width: 100%;
   width: fit-content;
   max-height: 300px;
   overflow: auto;
@@ -298,10 +299,17 @@ a {
   padding: 0.75rem;
 }
 
+.group {
+  position: relative;
+  display: inline-block;
+  margin: 2rem auto;
+}
+
 .group:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .dropdown-menu a {
@@ -309,9 +317,10 @@ a {
   padding: 0.5rem 1rem;
   color: white;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
   font-size: 0.95rem;
   font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-menu a:hover {
