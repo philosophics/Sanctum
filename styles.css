@@ -334,7 +334,7 @@ footer {
   margin-top: 50px;
   font-size: 12px;
   color: gray;
-  text-align: justify;
+  text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -342,7 +342,7 @@ footer {
 }
 .footer-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
 }
 footer p {
