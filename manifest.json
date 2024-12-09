@@ -1,11 +1,15 @@
 {
   "name": "Sanctum",
   "short_name": "Sanctum",
-  "description": "Info Site for The Salted Lounge",
+  "description": "Info Site for The Salted Lounge - Your go-to resource for everything Sanctum-related!",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["utilities", "entertainment", "productivity"],
   "icons": [
     {
       "src": "lib/resources/images/icon-192.png",
