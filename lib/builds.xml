@@ -1,5 +1,11 @@
 <builds>
     <build>
+        <name>[COLORred]***SANCTUM BUILDS</name>
+        <version>OMEGA 21***</version>
+        [/COLOR]
+        <url>https://builds.sanctum.foo/Sanctum-Master.zip</url>
+    </build>
+    <build>
         <name>Hardnox (Default)</name>
         <version>0.7</version>
         <url>https://builds.sanctum.foo/hardnox/hardnox_v0.7.zip</url>
