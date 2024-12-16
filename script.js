@@ -47,9 +47,8 @@ window.onload = loadRandomLogo;
 
 // Check if the browser supports Service Workers
 if ("serviceWorker" in navigator) {
-  // Register the Service Worker
   navigator.serviceWorker
-    .register("/service-worker.js")
+    .register("/service-worker.js", { scope: "/" })
     .then((registration) => {
       console.log("Service Worker registered with scope:", registration.scope);
     })

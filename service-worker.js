@@ -5,6 +5,7 @@ const ASSETS = [
   "/manifest.json",
   "lib/resources/images/icon-192.png?v=2",
   "lib/resources/images/icon-512.png?v=2",
+  "lib/resources/images/favicon.ico", // Add favicon explicitly to the cache
   "/styles.css",
   "/script.js",
 ];
@@ -40,6 +41,14 @@ self.addEventListener("activate", (event) => {
 
 // Fetch event: Serve cached assets or fall back to the network
 self.addEventListener("fetch", (event) => {
+  // Redirect /favicon.ico requests to the correct path
+  if (event.request.url.endsWith("/favicon.ico")) {
+    console.log("Service Worker: Redirecting favicon.ico request");
+    event.respondWith(fetch("lib/resources/images/favicon.ico"));
+    return;
+  }
+
+  // Default fetch handling
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
