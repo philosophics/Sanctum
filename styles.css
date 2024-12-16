@@ -42,9 +42,15 @@
 }
 
 @keyframes bounceIcon {
-  0% { transform: translateY(0);}
-  50% { transform: translateY(-8px);}
-  10% { transform: translateY(0);}
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  10% {
+    transform: translateY(0);
+  }
 }
 
 body {
@@ -74,7 +80,7 @@ a {
   border: 2px solid transparent;
   border-radius: 8px;
   color: white;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
@@ -84,13 +90,13 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;   /* Consistent button width */
+  min-width: 160px; /* Consistent button width */
   max-width: 240px;
 }
 
 .luxury-button:hover {
-  background: linear-gradient(to right, #3CCB84, #169879);
-  border-color: #3CCB84;
+  background: linear-gradient(to right, #3ccb84, #169879);
+  border-color: #3ccb84;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transform: scale(1.1) translateX(-5%);
   transition: all 0.4s ease-in-out;
@@ -160,42 +166,42 @@ a {
   }
 }
 
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5em;
+  background-color: #333;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  padding: 0 0.4em;
+  margin: 0;
+}
+
 .terminal-loader {
-  margin: 2rem auto;
-  padding: 1em 1.5em;
+  margin: 2vh auto;
+  padding: 0 1em 1em;
   border: 0.1em solid #333;
   background-color: #1a1a1a;
   color: #0f0;
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
-  padding: 1.5em 1em;
-  width: 14em;
-  height: 4.9em;
-  margin: 1.5rem 0;
-  margin-bottom: 1.5rem;
+  width: 16em;
+  min-height: 6em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.terminal-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5em;
-  background-color: #333;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 0 0.4em;
-  box-sizing: border-box;
-  justify-content: flex-start;
 }
 
 .terminal-controls {
@@ -234,11 +240,13 @@ a {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 0.2em solid green; /* Cursor */
+  border-right: 0.2em solid green;
   animation: typeAndDelete 6s steps(14) infinite,
     blinkCursor 0.6s step-end infinite alternate;
-  margin-top: 1em;
+  margin-top: 2.5em;
+  margin-left: -0.5em;
   text-align: left;
+  font-size: 1em;
 }
 
 .file-content {
@@ -247,7 +255,7 @@ a {
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: anywhere;
-  white-space: normal;
+  white-space: nowrap;
   padding: 0.5rem;
   background: #222;
   border: 1px solid #555;
@@ -258,7 +266,7 @@ a {
 .dropdown-btn {
   background: #333;
   color: white;
-  padding: 0.4rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: 1px solid #555;
   border-radius: 0.4rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -270,16 +278,23 @@ a {
   transition: transform 0.2s ease-in-out;
   position: relative;
   z-index: 2;
+  margin: 0;
 }
 
 .dropdown-btn svg {
   width: 16px;
   height: 16px;
+  transition: transform 0.2s ease;
 }
 
 .dropdown-btn:hover {
   transform: scale(1.05);
   background: #444;
+  border-color: #666;
+}
+
+.dropdown-btn:hover svg {
+  transform: rotate(-90deg);
 }
 
 .dropdown-menu {
@@ -287,27 +302,46 @@ a {
   color: white;
   border: 1px solid #555;
   border-radius: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.07rem;
   min-width: 200px;
-  max-width: 100%;
+  max-width: 90vw;
   width: fit-content;
+  max-width: 400px;
   max-height: 300px;
   overflow: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 0.5s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.3s ease, width 0.3s ease;
   padding: 0.75rem;
   pointer-events: none;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    position: absolute; /* Position relative to the container */
+    top: 100%; /* Below the button */
+    left: -50%; /* Start at the center of the container */
+    transform: translateX(-50%); /* Center the dropdown */
+    margin-top: 0.5rem; /* Spacing below the button */
+    max-width: 90vw; /* Prevent overflow on smaller screens */
+    white-space: nowrap; /* Ensure the content doesn't wrap */
+    box-sizing: border-box; /* Keep padding/borders in width */
+  }
 }
 
 .group {
-  position: relative;
-  display: inline-block;
+  display: block;
+  justify-content: center;
   margin: 2rem auto;
+  width: fit-content;
+  position: relative;
 }
 
-.group:hover .dropdown-menu {
+.group:hover .dropdown-menu,
+.dropdown-menu:hover {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -328,6 +362,7 @@ a {
 .dropdown-menu a:hover {
   background: #444;
   color: #ffa000;
+  border-radius: 0.4rem;
 }
 
 ul li a {
@@ -341,25 +376,39 @@ ul li a {
 ul li a:hover {
   color: #ffa000;
 }
+
 footer {
-  margin-top: 50px;
   font-size: 12px;
   color: gray;
   text-align: center;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  padding: 10px 2rem;
+  left: 0;
+  width: 100%; /* Ensures the footer spans the full width */
+  padding: 10px 0; /* Adjust vertical padding as needed */
+  background-color: #141414; /* Matches the body background for consistency */
 }
+
 .footer-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically aligns items in the container */
+  gap: 20px; /* Adjust spacing between elements */
+  margin: 0 auto; /* Ensures the container is centered */
+  padding: 0 2rem; /* Optional: Adjust side padding */
+  max-width: 1200px; /* Prevents content from stretching too far on wide screens */
 }
+
 footer p {
   margin: 0;
 }
+
 footer a {
   color: #007bff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffa000;
 }
