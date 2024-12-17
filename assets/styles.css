@@ -302,7 +302,7 @@ a {
   color: white;
   border: 1px solid #555;
   border-radius: 0.5rem;
-  margin-top: 0.15rem;
+  margin-top: 0.14rem;
   min-width: 200px;
   max-width: 90vw;
   width: fit-content;
@@ -324,7 +324,7 @@ a {
     position: absolute; /* Position relative to the container */
     top: 100%; /* Below the button */
     left: -45%; /* Start at the center of the container */
-    transform: translateX(-50%); /* Center the dropdown */
+    transform: translateY(-20%); /* Center the dropdown */
     margin-top: 0.5rem; /* Spacing below the button */
     max-width: 90vw; /* Prevent overflow on smaller screens */
     white-space: nowrap; /* Ensure the content doesn't wrap */
