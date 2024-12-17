@@ -288,7 +288,7 @@ a {
 }
 
 .dropdown-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) translate(-5%);
   background: #444;
   border-color: #666;
 }
@@ -302,28 +302,28 @@ a {
   color: white;
   border: 1px solid #555;
   border-radius: 0.5rem;
-  margin-top: 0.07rem;
+  margin-top: 0.15rem;
   min-width: 200px;
   max-width: 90vw;
   width: fit-content;
-  max-width: 400px;
   max-height: 300px;
   overflow: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(-20px);
   transition: opacity 0.5s ease, transform 0.3s ease, width 0.3s ease;
   padding: 0.75rem;
   pointer-events: none;
   position: absolute;
-  left: 0;
+  left: -40%;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {
   .dropdown-menu {
     position: absolute; /* Position relative to the container */
     top: 100%; /* Below the button */
-    left: -50%; /* Start at the center of the container */
+    left: -45%; /* Start at the center of the container */
     transform: translateX(-50%); /* Center the dropdown */
     margin-top: 0.5rem; /* Spacing below the button */
     max-width: 90vw; /* Prevent overflow on smaller screens */
