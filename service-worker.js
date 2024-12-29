@@ -2,10 +2,10 @@
 const CACHE_NAME = "sanctum-cache-v3"; // Increment this version for updates
 const ASSETS = [
   "/", // Root
-  "/manifest.json", // Manifest file
-  "lib/resources/images/icon-192.png?v=2",
-  "lib/resources/images/icon-512.png?v=2",
-  "lib/resources/images/favicon.ico",
+  "/manifest.json",
+  "/lib/resources/images/icon-192.png?v=2",
+  "/lib/resources/images/icon-512.png?v=2",
+  "/lib/resources/images/favicon.ico",
   "/styles.css",
   "/script.js",
 ];
