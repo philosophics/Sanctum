@@ -2,18 +2,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link
       rel="icon"
       href="../lib/resources/images/favicon.ico"
       sizes="16x16 32x32 48x48 64x64"
       type="image/x-icon"
     />
-    <link
-      rel="shortcut icon"
-      href="../lib/resources/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../lib/resources/images/favicon.ico" type="image/x-icon" />
     <script src="../lib/resources/tools/convert-mega.js"></script>
     <script src="../lib/resources/tools/convert-dropbox.js"></script>
     <title>Sanctum Wizard</title>
@@ -21,14 +21,16 @@
   <body>
     <img id="site-logo" alt="Sanctum Logo" />
     <div class="button-container">
-      <button onclick="window.location.href='../';" class="back-button">
-        <--
+      <button onclick="window.location.href = '../'" class="luxury-button">
+        <i class="fas fa-arrow-left"></i>
+        <span class="button-text">Previous Page</span>
+        <span class="hover-bg"></span>
       </button>
-      <button
-        onclick="window.location.href='../lib/';"
-        class="resources-button"
-      >
-        Resources
+
+      <button onclick="window.location.href = '../lib/'" class="luxury-button">
+        <i class="fas fa-folder-open"></i>
+        <span class="button-text">More</span>
+        <span class="hover-bg"></span>
       </button>
     </div>
     <br />
@@ -36,7 +38,7 @@
     <br />
     <br />
     <div class="content">
-      <ul>
+      <ul class="link-list">
         <li><a href="plugin.program.Sanctum/addon.xml">wizard addon.xml</a></li>
         <li>
           <a href="repository.Sanctum/fanart.jpg">repository fanart.jpg</a>
@@ -48,74 +50,26 @@
           >
         </li>
         <li>
-          <a href="repository.Sanctum/resources/repository-banner_1.png"
-            >repository banner_1.png</a
-          >
+          <a href="repository.Sanctum/resources/repository-banner_1.png">repository banner_1.png</a>
         </li>
         <li>
-          <a href="repository.Sanctum/resources/repository-banner_2.png"
-            >repository-banner_2.png</a
-          >
+          <a href="repository.Sanctum/resources/repository-banner_2.png">repository-banner_2.png</a>
         </li>
         <li>
-          <a href="repository.Sanctum/resources/repository-banner_3.png"
-            >repository-banner_3.png</a
-          >
+          <a href="repository.Sanctum/resources/repository-banner_3.png">repository-banner_3.png</a>
         </li>
         <li>
-          <a href="plugin.program.Sanctum/resources/wizard-banner_1.jpg"
-            >wizard-banner_1.jpg</a
-          >
+          <a href="plugin.program.Sanctum/resources/wizard-banner_1.jpg">wizard-banner_1.jpg</a>
         </li>
         <li>
-          <a href="plugin.program.Sanctum/resources/wizard-banner_2.jpg"
-            >wizard-banner_2.jpg</a
-          >
+          <a href="plugin.program.Sanctum/resources/wizard-banner_2.jpg">wizard-banner_2.jpg</a>
         </li>
         <li>
-          <a href="plugin.program.Sanctum/resources/wizard-banner_3.jpg"
-            >wizard-banner_3.jpg</a
-          >
+          <a href="plugin.program.Sanctum/resources/wizard-banner_3.jpg">wizard-banner_3.jpg</a>
         </li>
       </ul>
     </div>
-    <div class="container">
-      <div class="bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+  </br>
     <p></p>
     <hr />
     <h2>Convert DropBox Link</h2>
@@ -131,11 +85,7 @@
     <button onclick="convertMegaLink()">Convert</button>
     <p id="megaoutput"></p>
     <h4></h4>
-    <a
-      href="https://discord.gg/saltedlounge"
-      target="_blank"
-      style="text-decoration: none"
-    >
+    <a href="https://discord.gg/saltedlounge" target="_blank" style="text-decoration: none">
       <button class="animated-button discord-button" style="margin-top: 20px">
         <svg
           width="20"
@@ -153,13 +103,12 @@
         <span class="now">Now!</span>
       </button>
     </a>
+  </br>
     <footer>
       <div class="footer-container">
         <p>
           Licensed under
-          <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank"
-            >GPLv3</a
-          >.
+          <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.
         </p>
         <p>
           Powered by
@@ -167,6 +116,6 @@
         </p>
       </div>
     </footer>
-    <script src="script.js" defer></script>
+    <script src="../assets/script.js" defer></script>
   </body>
 </html>
