@@ -1,5 +1,5 @@
 // Define the cache name and assets
-const CACHE_NAME = "sanctum-cache-v5"; // Increment this version for updates
+const CACHE_NAME = "sanctum-cache-v6"; // Increment this version for updates
 const ASSETS = [
   "/", // Root
   "/manifest.json",

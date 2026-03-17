@@ -36,9 +36,6 @@ function loadRandomLogo() {
   const logosDir = prefix + "lib/resources/images/logos/";
 
   logoElement.src = logosDir + randomLogo;
-
-  console.log("Detecting Subfolder:", isSubfolder);
-  console.log("Final Logo Path:", logoElement.src);
 }
 
 window.onload = loadRandomLogo;
@@ -47,9 +44,7 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("/service-worker.js", { scope: "/" })
     .then((registration) => {
-      console.log("Service Worker registered with scope:", registration.scope);
     })
     .catch((error) => {
-      console.error("Service Worker registration failed:", error);
     });
 }
