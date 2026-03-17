@@ -1,7 +1,6 @@
-// Define the cache name and assets
-const CACHE_NAME = "sanctum-cache-v6"; // Increment this version for updates
+const CACHE_NAME = "sanctum-cache-v7";
 const ASSETS = [
-  "/", // Root
+  "/",
   "/manifest.json",
   "/lib/resources/images/icon-192.png?v=2",
   "/lib/resources/images/icon-512.png?v=2",
@@ -10,9 +9,8 @@ const ASSETS = [
   "/assets/script.js",
 ];
 
-const DEBUG = false; // Set to true to enable console logs for debugging
+const DEBUG = false;
 
-// Install event: Cache assets
 self.addEventListener("install", (event) => {
   if (DEBUG) console.log("Service Worker: Installing...");
   event.waitUntil(
@@ -23,7 +21,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Activate event: Clean up old caches
 self.addEventListener("activate", (event) => {
   if (DEBUG) console.log("Service Worker: Activating...");
   event.waitUntil(
@@ -38,26 +35,23 @@ self.addEventListener("activate", (event) => {
       )
     )
   );
-  return self.clients.claim(); // Take control immediately
+  return self.clients.claim();
 });
 
-// Fetch event: Serve cached assets or let browser fetch uncached resources
 self.addEventListener("fetch", (event) => {
-  // Exclude Font Awesome CDN resources from Service Worker handling
   if (event.request.url.startsWith("https://cdnjs.cloudflare.com/")) {
     if (DEBUG) console.log("Service Worker: Skipping Font Awesome fetch:", event.request.url);
-    return; // Allow the browser to handle these requests directly
+    return;
   }
 
-  // Default fetch handling
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         if (DEBUG) console.log("Service Worker: Serving from cache:", event.request.url);
-        return cachedResponse; // Serve from cache
+        return cachedResponse;
       }
       if (DEBUG) console.log("Service Worker: Fetching from network:", event.request.url);
-      return fetch(event.request); // Fetch from network if not cached
+      return fetch(event.request);
     })
   );
 });
